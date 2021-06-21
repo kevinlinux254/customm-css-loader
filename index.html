@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>loader</title>
+</head>
+<style type="text/css">
+	body {
+		background-color: #6495ed;
+	}
+	.wrapper {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 1000;
+	}
+	.loader {
+		height: 100px;
+		width: 100px;
+		border-top: 3px solid #fff;
+		border-radius: 100%;
+		animation: spin 1s linear infinite;
+	}
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	.linux {
+		opacity: 0;
+		display: none;
+	}
+</style>
+<body>
+	<div class="wrapper">
+		<div class="loader"></div>
+	</div>
+
+	<section class="linux">
+
+	
+
+	<table>
+		<thead>
+			<tr>
+				<th>User ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Date Registered</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Kevin</td>
+				<td>Onyango</td>
+				<td>Email</td>
+				<td>18-06-2021</td>
+			</tr>
+		</tbody>
+	</table>
+	</section>
+
+
+	<script type="text/javascript">
+		const loader = document.querySelector('.loader');
+		const sect = document.querySelector('.linux');
+
+		function init() {
+			setTimeout( ()=> {
+				loader.style.opacity = 0;
+				loader.style.display = 'none';
+
+				sect.style.opacity = 1;
+				sect.style.display = 'block';
+			}, 4000);
+		}
+		init();
+	</script>
+
+</body>
+</html>
